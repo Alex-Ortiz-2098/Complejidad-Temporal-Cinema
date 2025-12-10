@@ -1,32 +1,28 @@
-En un salón de fiestas se tienen registrados los eventos contratados y el conjunto de empleados que
-trabaja de forma fija en los eventos. De cada evento se almacena: nombre y dni del cliente, fecha y
-hora del evento, tipo de evento (cumpleaños de 15, casamientos, bautismos, etc.. ), encargado, lista
-de servicios contratados, costo total (se calcula en base al precio de los servicios contratados y la
-cantidad) y monto de la seña. De cada servicio ofrecido se almacena nombre del servicio (catering,
-bebida, mozos, DJ, inflables, cama elástica, etc), descripción (detalle de lo que incluye el servicio),
-cantidad solicitada, costo unitario del servicio. De cada empleado se registra su nombre y apellido,
-dni, nro de legajo, sueldo y tarea que desempeña. El encargado de un evento es un empleado que
-organiza y controla el desarrollo del evento y cobra un plus sobre el sueldo.
-Se deberá desarrollar una aplicación, utilizando las clases que considere necesarias, utilizando
-herencia cuando corresponda. La aplicación debe proveer, mediante un menú, las siguientes
-funcionalidades:
-##
-  a- Agregar un servicio
-  ##
-  b- Eliminar un servicio.
-  ##
-  c- Dar de alta un empleado/encargado
-  ##
-  d- Dar de baja un empleado/encargado
-  ##
-  e- Reservar el salón para un evento. El cliente puede incluir en su pedido un solo servicio o
-  varios. El salón toma una sola reserva para la misma fecha. En caso de que ya tenga una
-  reserva previa se levanta una excepción indicando lo ocurrido. Al confirmar la reserva se le
-  asigna un encargado al evento.
-  ##
-  f- Cancelar un evento. En caso que el cliente solicite la cancelación con más de un mes de
-  anticipación a la fecha del servicio, no se le reintegra la seña. En otro caso, el cliente debe
-  abonar el servicio completo.
-  ##
-  g- Submenú de impresión: listado de eventos, de clientes, de empleados, listado de eventos de
-  un mes determinado
+# 🔎 Buscador de Coincidencias Aproximadas (BK-Tree)
+
+[cite_start]Este proyecto es una implementación de un motor de búsqueda eficiente basado en estructuras de datos métricas, desarrollado como trabajo final para la materia **Complejidad Temporal, Estructuras de Datos y Algoritmos** en la **UNAJ**[cite: 35, 37].
+
+## 📋 Descripción
+[cite_start]El objetivo del sistema es indexar datos provenientes de archivos CSV y permitir búsquedas de texto aproximadas (fuzzy matching) de manera eficiente[cite: 79]. [cite_start]A diferencia de una búsqueda exacta, este sistema permite encontrar resultados que se "parecen" al término buscado basándose en un umbral de tolerancia configurable[cite: 93, 99].
+
+## ⚙️ Arquitectura y Tecnologías
+* **Lenguaje:** C# (.NET)
+* [cite_start]**Estructura de Datos Principal:** Árbol BK (Burkhard-Keller Tree), un árbol métrico diseñado para indexación y búsqueda rápida[cite: 53, 54].
+* [cite_start]**Algoritmo de Medición:** Distancia de Levenshtein (calcula el número mínimo de operaciones requeridas para transformar una cadena en otra)[cite: 60, 107].
+
+## 🚀 Funcionalidades
+1.  [cite_start]**Indexación de Datos:** Carga masiva de términos desde archivos externos[cite: 80].
+2.  **Búsqueda Configurable:**
+    * Entrada de término a buscar.
+    * [cite_start]Barra deslizante para ajustar la **Distancia** (nivel de tolerancia de la búsqueda)[cite: 93].
+3.  **Consultas de Estructura:**
+    * [cite_start]Visualización de **Caminos** y **Profundidad** del árbol[cite: 89, 90].
+    * [cite_start]Reporte de nodos hoja y distribución por niveles[cite: 100, 102].
+4.  [cite_start]**Predicciones:** Sugerencia de términos basados en la métrica de distancia implementada[cite: 88].
+
+## 🧠 Desafíos Técnicos
+* [cite_start]Implementación recursiva para la construcción del árbol BK, agrupando nodos según su distancia discreta a la raíz ($d(raiz, b) = k$)[cite: 58].
+* Optimización de la búsqueda para descartar ramas completas del árbol que no cumplen con el criterio de la desigualdad triangular, mejorando la complejidad temporal respecto a una búsqueda lineal.
+
+---
+*Proyecto desarrollado por Alex Ortiz.*
