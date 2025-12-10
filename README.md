@@ -12,7 +12,9 @@ herencia cuando corresponda. La aplicación debe proveer, mediante un menú, las
 funcionalidades:
 ##
   a- Agregar un servicio
+  ##
   b- Eliminar un servicio.
+  ##
   c- Dar de alta un empleado/encargado
   d- Dar de baja un empleado/encargado
   e- Reservar el salón para un evento. El cliente puede incluir en su pedido un solo servicio o
