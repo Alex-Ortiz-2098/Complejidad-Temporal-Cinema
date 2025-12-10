@@ -16,13 +16,17 @@ funcionalidades:
   b- Eliminar un servicio.
   ##
   c- Dar de alta un empleado/encargado
+  ##
   d- Dar de baja un empleado/encargado
+  ##
   e- Reservar el salón para un evento. El cliente puede incluir en su pedido un solo servicio o
   varios. El salón toma una sola reserva para la misma fecha. En caso de que ya tenga una
   reserva previa se levanta una excepción indicando lo ocurrido. Al confirmar la reserva se le
   asigna un encargado al evento.
+  ##
   f- Cancelar un evento. En caso que el cliente solicite la cancelación con más de un mes de
   anticipación a la fecha del servicio, no se le reintegra la seña. En otro caso, el cliente debe
   abonar el servicio completo.
+  ##
   g- Submenú de impresión: listado de eventos, de clientes, de empleados, listado de eventos de
   un mes determinado
